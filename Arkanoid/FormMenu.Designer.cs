@@ -49,7 +49,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackgroundImage = global::Arkanoid.Properties.Resources.image_start;
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.ClientSize = new System.Drawing.Size(720, 532);
+      this.ClientSize = new System.Drawing.Size(704, 496);
       this.Controls.Add(this.ButtonStart);
       this.DoubleBuffered = true;
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
       this.label_top = new System.Windows.Forms.Label();
       this.label_left = new System.Windows.Forms.Label();
@@ -39,11 +40,12 @@
       this.brick3 = new System.Windows.Forms.Label();
       this.brick4 = new System.Windows.Forms.Label();
       this.brick5 = new System.Windows.Forms.Label();
+      this.timer = new System.Windows.Forms.Timer(this.components);
       this.SuspendLayout();
       // 
       // label_top
       // 
-      this.label_top.BackColor = System.Drawing.SystemColors.HighlightText;
+      this.label_top.BackColor = System.Drawing.SystemColors.ControlText;
       this.label_top.Location = new System.Drawing.Point(-1, -1);
       this.label_top.Name = "label_top";
       this.label_top.Size = new System.Drawing.Size(723, 23);
@@ -51,18 +53,18 @@
       // 
       // label_left
       // 
-      this.label_left.BackColor = System.Drawing.SystemColors.HighlightText;
+      this.label_left.BackColor = System.Drawing.SystemColors.ControlText;
       this.label_left.Location = new System.Drawing.Point(-1, 22);
       this.label_left.Name = "label_left";
-      this.label_left.Size = new System.Drawing.Size(24, 477);
+      this.label_left.Size = new System.Drawing.Size(24, 93);
       this.label_left.TabIndex = 1;
       // 
       // label_right
       // 
-      this.label_right.BackColor = System.Drawing.SystemColors.HighlightText;
+      this.label_right.BackColor = System.Drawing.SystemColors.ControlText;
       this.label_right.Location = new System.Drawing.Point(698, 22);
       this.label_right.Name = "label_right";
-      this.label_right.Size = new System.Drawing.Size(24, 477);
+      this.label_right.Size = new System.Drawing.Size(24, 93);
       this.label_right.TabIndex = 2;
       // 
       // racket
@@ -81,7 +83,7 @@
       this.ball.AutoSize = true;
       this.ball.Checked = true;
       this.ball.Enabled = false;
-      this.ball.Location = new System.Drawing.Point(352, 490);
+      this.ball.Location = new System.Drawing.Point(351, 499);
       this.ball.Name = "ball";
       this.ball.Size = new System.Drawing.Size(14, 13);
       this.ball.TabIndex = 4;
@@ -91,7 +93,7 @@
       // 
       // brick1
       // 
-      this.brick1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.brick1.BackColor = System.Drawing.Color.Red;
       this.brick1.ForeColor = System.Drawing.SystemColors.ControlText;
       this.brick1.Location = new System.Drawing.Point(58, 56);
       this.brick1.Name = "brick1";
@@ -100,7 +102,7 @@
       // 
       // brick2
       // 
-      this.brick2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.brick2.BackColor = System.Drawing.Color.Red;
       this.brick2.ForeColor = System.Drawing.SystemColors.ControlText;
       this.brick2.Location = new System.Drawing.Point(320, 56);
       this.brick2.Name = "brick2";
@@ -109,7 +111,7 @@
       // 
       // brick3
       // 
-      this.brick3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.brick3.BackColor = System.Drawing.Color.Red;
       this.brick3.ForeColor = System.Drawing.SystemColors.ControlText;
       this.brick3.Location = new System.Drawing.Point(572, 56);
       this.brick3.Name = "brick3";
@@ -118,7 +120,7 @@
       // 
       // brick4
       // 
-      this.brick4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.brick4.BackColor = System.Drawing.Color.Red;
       this.brick4.ForeColor = System.Drawing.SystemColors.ControlText;
       this.brick4.Location = new System.Drawing.Point(181, 136);
       this.brick4.Name = "brick4";
@@ -127,18 +129,23 @@
       // 
       // brick5
       // 
-      this.brick5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.brick5.BackColor = System.Drawing.Color.Red;
       this.brick5.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick5.Location = new System.Drawing.Point(440, 136);
+      this.brick5.Location = new System.Drawing.Point(384, 194);
       this.brick5.Name = "brick5";
-      this.brick5.Size = new System.Drawing.Size(82, 22);
+      this.brick5.Size = new System.Drawing.Size(113, 42);
       this.brick5.TabIndex = 9;
+      // 
+      // timer
+      // 
+      this.timer.Interval = 5;
+      this.timer.Tick += new System.EventHandler(this.timer_Tick);
       // 
       // FormGame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.SystemColors.Highlight;
+      this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.ClientSize = new System.Drawing.Size(720, 535);
       this.Controls.Add(this.brick5);
       this.Controls.Add(this.brick4);
@@ -174,5 +181,6 @@
     private System.Windows.Forms.Label brick3;
     private System.Windows.Forms.Label brick4;
     private System.Windows.Forms.Label brick5;
+    private System.Windows.Forms.Timer timer;
   }
 }

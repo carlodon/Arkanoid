@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Arkanoid
 {
-  public partial class Form1 : Form
+  public partial class FormMenu : Form
   {
-    public Form1()
+    public FormMenu()
     {
       InitializeComponent();
+    }
+
+    private void ButtonStart_Click(object sender, EventArgs e)
+    {
+      FormGame game = new FormGame();
+      game.ShowDialog();
     }
   }
 }

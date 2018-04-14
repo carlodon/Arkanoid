@@ -1,0 +1,10 @@
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\bin\Debug\Arkanoid.exe.config
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\bin\Debug\Arkanoid.exe
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\bin\Debug\Arkanoid.pdb
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.csprojResolveAssemblyReference.cache
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.Properties.Resources.resources
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.csproj.GenerateResource.Cache
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.exe
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.pdb
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.FormMenu.resources
+C:\Users\Влад\Desktop\Универ\6 семестр\Информационные технологии\Лаба 3 и 4\Arkanoid\Arkanoid\obj\Debug\Arkanoid.FormGame.resources

@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Arkanoid
 {
   public partial class FormGame : Form
   {
     static Random rand = new Random();
     int racket_x, racket_y;
-    int racket_shift_x = 10;
+    int racket_shift_x = 15;
 
     int ball_x, ball_y;
     int ball_shift_x = 4; //max ball shift
@@ -87,15 +88,21 @@ namespace Arkanoid
         else
           loss_ball();
       }
-
+      
       ball_x += ball_sx;
       ball_y += ball_sy;
       ball.Location = new Point(ball_x, ball_y);
+
       cross_brick(brick1);
       cross_brick(brick2);
       cross_brick(brick3);
       cross_brick(brick4);
       cross_brick(brick5);
+
+      /*
+      foreach (Label brick in this.Controls.OfType<Label>())
+          cross_brick(brick);
+      */
     }
 
     private void cross_brick(Label brick)
@@ -121,7 +128,7 @@ namespace Arkanoid
         ry1 <= by2 && by2 <= ry2)
       {
         drop_brick(brick);
-        ball_sx = -ball_sy;
+        ball_sy = -ball_sy;
         return;
       }
 
@@ -129,7 +136,7 @@ namespace Arkanoid
         ry1 <= by1 && by1 <= ry2)
       {
         drop_brick(brick);
-        ball_sx = -ball_sy;
+        ball_sy = -ball_sy;
         return;
       }
 
@@ -194,7 +201,7 @@ namespace Arkanoid
         case Keys.Right: shift_racket(+racket_shift_x); break;
         case Keys.A: shift_racket(-racket_shift_x); break;
         case Keys.D: shift_racket(+racket_shift_x); break;
-        case Keys.Enter: timer.Enabled = true; break;
+        case Keys.Space: timer.Enabled = true; break;
       }
     }
 

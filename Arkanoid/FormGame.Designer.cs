@@ -56,7 +56,7 @@
       this.label_left.BackColor = System.Drawing.SystemColors.ControlText;
       this.label_left.Location = new System.Drawing.Point(-1, 22);
       this.label_left.Name = "label_left";
-      this.label_left.Size = new System.Drawing.Size(24, 93);
+      this.label_left.Size = new System.Drawing.Size(24, 473);
       this.label_left.TabIndex = 1;
       // 
       // label_right
@@ -64,7 +64,7 @@
       this.label_right.BackColor = System.Drawing.SystemColors.ControlText;
       this.label_right.Location = new System.Drawing.Point(698, 22);
       this.label_right.Name = "label_right";
-      this.label_right.Size = new System.Drawing.Size(24, 93);
+      this.label_right.Size = new System.Drawing.Size(24, 473);
       this.label_right.TabIndex = 2;
       // 
       // racket
@@ -95,7 +95,7 @@
       // 
       this.brick1.BackColor = System.Drawing.Color.Red;
       this.brick1.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick1.Location = new System.Drawing.Point(58, 56);
+      this.brick1.Location = new System.Drawing.Point(594, 184);
       this.brick1.Name = "brick1";
       this.brick1.Size = new System.Drawing.Size(82, 22);
       this.brick1.TabIndex = 5;
@@ -104,7 +104,7 @@
       // 
       this.brick2.BackColor = System.Drawing.Color.Red;
       this.brick2.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick2.Location = new System.Drawing.Point(320, 56);
+      this.brick2.Location = new System.Drawing.Point(320, 184);
       this.brick2.Name = "brick2";
       this.brick2.Size = new System.Drawing.Size(82, 22);
       this.brick2.TabIndex = 6;
@@ -113,7 +113,7 @@
       // 
       this.brick3.BackColor = System.Drawing.Color.Red;
       this.brick3.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick3.Location = new System.Drawing.Point(572, 56);
+      this.brick3.Location = new System.Drawing.Point(463, 184);
       this.brick3.Name = "brick3";
       this.brick3.Size = new System.Drawing.Size(82, 22);
       this.brick3.TabIndex = 7;
@@ -122,7 +122,7 @@
       // 
       this.brick4.BackColor = System.Drawing.Color.Red;
       this.brick4.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick4.Location = new System.Drawing.Point(181, 136);
+      this.brick4.Location = new System.Drawing.Point(58, 184);
       this.brick4.Name = "brick4";
       this.brick4.Size = new System.Drawing.Size(82, 22);
       this.brick4.TabIndex = 8;
@@ -131,9 +131,9 @@
       // 
       this.brick5.BackColor = System.Drawing.Color.Red;
       this.brick5.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.brick5.Location = new System.Drawing.Point(384, 194);
+      this.brick5.Location = new System.Drawing.Point(195, 184);
       this.brick5.Name = "brick5";
-      this.brick5.Size = new System.Drawing.Size(113, 42);
+      this.brick5.Size = new System.Drawing.Size(82, 22);
       this.brick5.TabIndex = 9;
       // 
       // timer

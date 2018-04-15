@@ -163,8 +163,8 @@ namespace Arkanoid
       total_bricks--;
       if (total_bricks == 0)
       {
-        MessageBox.Show("Вы победили!", "Игра окончена!");
         timer.Enabled = false;
+        MessageBox.Show("Вы победили!", "Игра окончена!");
         DialogResult = System.Windows.Forms.DialogResult.OK;
       }
     }

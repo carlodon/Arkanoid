@@ -49,7 +49,7 @@ namespace Arkanoid
       ball_y = ball.Location.Y;
       ball_sx = ball_shift_x;
       ball_sy = -ball_shift_y;
-      total_bricks = 21;
+      total_bricks = array.Length;
 
     }
 
@@ -134,10 +134,57 @@ namespace Arkanoid
 
     }
 
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+      if (control_mouse.Checked == false && control_keyboard.Checked == false)  //по умолчанию
+      {
+        switch (keyData)
+        {
+          case Keys.Space:
+            timer.Enabled = true;
+            label_pause.Visible = false;
+            control_mouse.Enabled = true;
+            control_mouse.Checked = true;
+            break;
+        }
+      }
+      switch (keyData)
+      {
+        case Keys.Space:
+          timer.Enabled = true;
+          label_pause.Visible = false;
+          control_mouse.Enabled = false;
+          control_keyboard.Enabled = false;
+          return true;
+        case Keys.Escape:
+          timer.Enabled = false;
+          label_pause.Visible = true;
+          control_mouse.Enabled = true;
+          control_keyboard.Enabled = true;
+          return true;
+        default:
+          //для всех остальных клавиш оставляем базовую обработку
+          return base.ProcessCmdKey(ref msg, keyData);
+      }
+    }
+
+    private void control_mouse_CheckedChanged(object sender, EventArgs e)
+    {
+      launch_mouse_game = true;
+      launch_keyboard_game = false;
+    }
+
+    private void control_keyboard_CheckedChanged(object sender, EventArgs e)
+    {
+      launch_mouse_game = false;
+      launch_keyboard_game = true;
+    }
+
     private void FormGame_MouseMove(object sender, MouseEventArgs e)
     {
       if (launch_mouse_game)
       {
+        racket_shift_x = 2;
         int x = e.X;
         int y = e.Y;
         int deltaX = pX - x;
@@ -218,15 +265,22 @@ namespace Arkanoid
       if (total_bricks == 0)
       {
         timer.Enabled = false;
-        MessageBox.Show("Вы победили!", "Игра окончена!");
+        label_win_loss.Text = "You win!";
+        label_win_loss.ForeColor = Color.Green;
+        label_win_loss.Visible = true;
+        MessageBox.Show("You win!", "Сongratulation!");
         DialogResult = System.Windows.Forms.DialogResult.OK;
       }
     }
     private void loss_ball()
     {
       timer.Enabled = false;
-      MessageBox.Show("Шарик потерян!", "Проигрыш!");
+      label_win_loss.Text = "You loss!";
+      label_win_loss.ForeColor = Color.Red;
+      label_win_loss.Visible = true;
+      MessageBox.Show("You loss!", "Game over!");
       DialogResult = System.Windows.Forms.DialogResult.Abort;
+  
     }
 
  
@@ -235,14 +289,17 @@ namespace Arkanoid
     private void FormGame_KeyDown(object sender, KeyEventArgs e)
     {
       Keys key = e.KeyCode;
-      switch (key)
+  
+      if (launch_keyboard_game)
       {
-        //case Keys.Left: shift_racket(-racket_shift_x); break;
-        //case Keys.Right: shift_racket(+racket_shift_x); break;
-        //case Keys.A: shift_racket(-racket_shift_x); break;
-        //case Keys.D: shift_racket(+racket_shift_x); break;
-        case Keys.Space: timer.Enabled = true; launch_mouse_game = true; label_pause.Visible = false; break;
-        case Keys.Escape: timer.Enabled = false; label_pause.Visible = true; launch_mouse_game = false; break;
+        racket_shift_x = 20;
+        switch (key)
+        {
+          case Keys.Left: shift_racket(-racket_shift_x); break;
+          case Keys.Right: shift_racket(+racket_shift_x); break;
+          case Keys.A: shift_racket(-racket_shift_x); break;
+          case Keys.D: shift_racket(+racket_shift_x); break;
+        }
       }
     }
 

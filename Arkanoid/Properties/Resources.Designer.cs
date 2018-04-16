@@ -73,6 +73,16 @@ namespace Arkanoid.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_ball {
+            get {
+                object obj = ResourceManager.GetObject("black-ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_start {
             get {
                 object obj = ResourceManager.GetObject("image_start", resourceCulture);

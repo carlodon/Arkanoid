@@ -33,8 +33,6 @@
       this.label_top = new System.Windows.Forms.Label();
       this.label_left = new System.Windows.Forms.Label();
       this.label_right = new System.Windows.Forms.Label();
-      this.racket = new System.Windows.Forms.Button();
-      this.ball = new System.Windows.Forms.RadioButton();
       this.brick1 = new System.Windows.Forms.Label();
       this.brick2 = new System.Windows.Forms.Label();
       this.brick3 = new System.Windows.Forms.Label();
@@ -58,14 +56,16 @@
       this.brick20 = new System.Windows.Forms.Label();
       this.brick16 = new System.Windows.Forms.Label();
       this.brick21 = new System.Windows.Forms.Label();
-      this.control_mouse = new System.Windows.Forms.RadioButton();
-      this.control_keyboard = new System.Windows.Forms.RadioButton();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.label_pause = new System.Windows.Forms.Label();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      this.racket = new System.Windows.Forms.Button();
+      this.ball = new System.Windows.Forms.PictureBox();
+      this.label_win_loss = new System.Windows.Forms.Label();
+      this.control_mouse = new System.Windows.Forms.RadioButton();
+      this.control_keyboard = new System.Windows.Forms.RadioButton();
+      ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
       this.SuspendLayout();
       // 
       // label_top
@@ -91,32 +91,6 @@
       this.label_right.Name = "label_right";
       this.label_right.Size = new System.Drawing.Size(15, 473);
       this.label_right.TabIndex = 2;
-      // 
-      // racket
-      // 
-      this.racket.BackColor = System.Drawing.Color.Black;
-      this.racket.Enabled = false;
-      this.racket.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-      this.racket.Location = new System.Drawing.Point(301, 453);
-      this.racket.Name = "racket";
-      this.racket.Size = new System.Drawing.Size(117, 20);
-      this.racket.TabIndex = 3;
-      this.racket.Text = "--------------";
-      this.racket.UseVisualStyleBackColor = false;
-      // 
-      // ball
-      // 
-      this.ball.AutoSize = true;
-      this.ball.Checked = true;
-      this.ball.Cursor = System.Windows.Forms.Cursors.Default;
-      this.ball.Enabled = false;
-      this.ball.Location = new System.Drawing.Point(353, 435);
-      this.ball.Name = "ball";
-      this.ball.Size = new System.Drawing.Size(14, 13);
-      this.ball.TabIndex = 4;
-      this.ball.TabStop = true;
-      this.ball.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-      this.ball.UseVisualStyleBackColor = true;
       // 
       // brick1
       // 
@@ -322,57 +296,33 @@
       this.brick21.Size = new System.Drawing.Size(82, 22);
       this.brick21.TabIndex = 26;
       // 
-      // control_mouse
-      // 
-      this.control_mouse.AutoSize = true;
-      this.control_mouse.Enabled = false;
-      this.control_mouse.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.control_mouse.Location = new System.Drawing.Point(732, 105);
-      this.control_mouse.Name = "control_mouse";
-      this.control_mouse.Size = new System.Drawing.Size(77, 22);
-      this.control_mouse.TabIndex = 27;
-      this.control_mouse.Text = "Mouse";
-      this.control_mouse.UseVisualStyleBackColor = true;
-      // 
-      // control_keyboard
-      // 
-      this.control_keyboard.AutoSize = true;
-      this.control_keyboard.Enabled = false;
-      this.control_keyboard.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.control_keyboard.Location = new System.Drawing.Point(732, 133);
-      this.control_keyboard.Name = "control_keyboard";
-      this.control_keyboard.Size = new System.Drawing.Size(109, 22);
-      this.control_keyboard.TabIndex = 28;
-      this.control_keyboard.Text = "Keyboard";
-      this.control_keyboard.UseVisualStyleBackColor = true;
-      // 
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(747, 37);
+      this.label1.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.Location = new System.Drawing.Point(746, 34);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(94, 21);
+      this.label1.Size = new System.Drawing.Size(118, 26);
       this.label1.TabIndex = 29;
       this.label1.Text = "Control:";
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label2.Location = new System.Drawing.Point(728, 60);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(132, 21);
+      this.label2.Size = new System.Drawing.Size(166, 26);
       this.label2.TabIndex = 30;
       this.label2.Text = "Space - play";
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Font = new System.Drawing.Font("Algerian", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.Location = new System.Drawing.Point(728, 81);
+      this.label3.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.Location = new System.Drawing.Point(727, 86);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(120, 21);
+      this.label3.Size = new System.Drawing.Size(149, 26);
       this.label3.TabIndex = 31;
       this.label3.Text = "Esc - pause";
       // 
@@ -381,36 +331,85 @@
       this.label_pause.AutoSize = true;
       this.label_pause.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label_pause.ForeColor = System.Drawing.Color.Red;
-      this.label_pause.Location = new System.Drawing.Point(725, 158);
+      this.label_pause.Location = new System.Drawing.Point(744, 427);
       this.label_pause.Name = "label_pause";
       this.label_pause.Size = new System.Drawing.Size(134, 41);
       this.label_pause.TabIndex = 32;
       this.label_pause.Text = "PAUSE";
       this.label_pause.Visible = false;
       // 
-      // pictureBox1
+      // racket
       // 
-      this.pictureBox1.ErrorImage = global::Arkanoid.Properties.Resources.ball_white;
-      this.pictureBox1.Image = global::Arkanoid.Properties.Resources.ball_white;
-      this.pictureBox1.Location = new System.Drawing.Point(475, 405);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(20, 17);
-      this.pictureBox1.TabIndex = 33;
-      this.pictureBox1.TabStop = false;
+      this.racket.BackColor = System.Drawing.Color.Black;
+      this.racket.Enabled = false;
+      this.racket.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+      this.racket.Location = new System.Drawing.Point(301, 453);
+      this.racket.Name = "racket";
+      this.racket.Size = new System.Drawing.Size(117, 20);
+      this.racket.TabIndex = 3;
+      this.racket.Text = "--------------";
+      this.racket.UseVisualStyleBackColor = false;
+      // 
+      // ball
+      // 
+      this.ball.Image = global::Arkanoid.Properties.Resources.black_ball;
+      this.ball.Location = new System.Drawing.Point(348, 433);
+      this.ball.Name = "ball";
+      this.ball.Size = new System.Drawing.Size(20, 20);
+      this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.ball.TabIndex = 33;
+      this.ball.TabStop = false;
+      // 
+      // label_win_loss
+      // 
+      this.label_win_loss.AutoSize = true;
+      this.label_win_loss.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label_win_loss.ForeColor = System.Drawing.Color.Green;
+      this.label_win_loss.Location = new System.Drawing.Point(725, 180);
+      this.label_win_loss.Name = "label_win_loss";
+      this.label_win_loss.Size = new System.Drawing.Size(80, 41);
+      this.label_win_loss.TabIndex = 34;
+      this.label_win_loss.Text = "Win";
+      this.label_win_loss.Visible = false;
+      // 
+      // control_mouse
+      // 
+      this.control_mouse.AutoSize = true;
+      this.control_mouse.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.control_mouse.Location = new System.Drawing.Point(728, 115);
+      this.control_mouse.Name = "control_mouse";
+      this.control_mouse.Size = new System.Drawing.Size(106, 30);
+      this.control_mouse.TabIndex = 35;
+      this.control_mouse.Text = "MOUSE";
+      this.control_mouse.UseVisualStyleBackColor = true;
+      this.control_mouse.CheckedChanged += new System.EventHandler(this.control_mouse_CheckedChanged);
+      // 
+      // control_keyboard
+      // 
+      this.control_keyboard.AutoSize = true;
+      this.control_keyboard.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.control_keyboard.Location = new System.Drawing.Point(728, 146);
+      this.control_keyboard.Name = "control_keyboard";
+      this.control_keyboard.Size = new System.Drawing.Size(154, 30);
+      this.control_keyboard.TabIndex = 36;
+      this.control_keyboard.Text = "keyboard";
+      this.control_keyboard.UseVisualStyleBackColor = true;
+      this.control_keyboard.CheckedChanged += new System.EventHandler(this.control_keyboard_CheckedChanged);
       // 
       // FormGame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Azure;
-      this.ClientSize = new System.Drawing.Size(865, 475);
-      this.Controls.Add(this.pictureBox1);
+      this.ClientSize = new System.Drawing.Size(907, 475);
+      this.Controls.Add(this.control_keyboard);
+      this.Controls.Add(this.control_mouse);
+      this.Controls.Add(this.label_win_loss);
+      this.Controls.Add(this.ball);
       this.Controls.Add(this.label_pause);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
-      this.Controls.Add(this.control_keyboard);
-      this.Controls.Add(this.control_mouse);
       this.Controls.Add(this.brick21);
       this.Controls.Add(this.brick16);
       this.Controls.Add(this.brick20);
@@ -433,7 +432,6 @@
       this.Controls.Add(this.brick3);
       this.Controls.Add(this.brick2);
       this.Controls.Add(this.brick1);
-      this.Controls.Add(this.ball);
       this.Controls.Add(this.racket);
       this.Controls.Add(this.label_right);
       this.Controls.Add(this.label_left);
@@ -446,7 +444,7 @@
       this.Shown += new System.EventHandler(this.FormGame_Shown);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGame_KeyDown);
       this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormGame_MouseMove);
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -457,8 +455,6 @@
     private System.Windows.Forms.Label label_top;
     private System.Windows.Forms.Label label_left;
     private System.Windows.Forms.Label label_right;
-    private System.Windows.Forms.Button racket;
-    private System.Windows.Forms.RadioButton ball;
     private System.Windows.Forms.Label brick1;
     private System.Windows.Forms.Label brick2;
     private System.Windows.Forms.Label brick3;
@@ -482,12 +478,14 @@
     private System.Windows.Forms.Label brick20;
     private System.Windows.Forms.Label brick16;
     private System.Windows.Forms.Label brick21;
-    private System.Windows.Forms.RadioButton control_mouse;
-    private System.Windows.Forms.RadioButton control_keyboard;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label_pause;
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.Button racket;
+    private System.Windows.Forms.PictureBox ball;
+    private System.Windows.Forms.Label label_win_loss;
+    private System.Windows.Forms.RadioButton control_mouse;
+    private System.Windows.Forms.RadioButton control_keyboard;
   }
 }

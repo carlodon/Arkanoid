@@ -11,11 +11,15 @@ using System.Windows.Forms;
 
 namespace Arkanoid
 {
+ 
   public partial class FormGame : Form
   {
+    bool launch_mouse_game = false;
+    bool launch_keyboard_game = false;
+
     static Random rand = new Random();
     int racket_x, racket_y;
-    int racket_shift_x = 15;
+    int racket_shift_x = 2;
 
     int ball_x, ball_y;
     int ball_shift_x = 4; //max ball shift
@@ -28,11 +32,33 @@ namespace Arkanoid
         side_rx, //right x
         side_uy; //up y
 
-    int total_bricks; 
+    int total_bricks;
+    Label[] array;
+    int score_count = 0;
+
+    int pX = 0, pY = 0;
+    
+    private void init_game()
+    {
+      racket_x = racket.Location.X;
+      racket_y = racket.Location.Y;
+      side_lx = label_left.Location.X + label_left.Width;
+      side_rx = label_right.Location.X;
+      side_uy = label_top.Location.X + label_top.Height;
+      ball_x = ball.Location.X;
+      ball_y = ball.Location.Y;
+      ball_sx = ball_shift_x;
+      ball_sy = -ball_shift_y;
+      total_bricks = 21;
+
+    }
 
     public FormGame()
     {
       InitializeComponent();
+      array = new Label[] {brick1, brick2, brick3, brick4, brick5, brick6, brick7, brick8, brick9, brick10,
+                           brick11, brick12, brick13, brick14, brick15, brick16, brick17, brick18, brick19, brick20, brick21
+                          };
     }
 
     private void FormGame_Shown(object sender, EventArgs e)
@@ -54,6 +80,7 @@ namespace Arkanoid
       bx2 = ball_x + ball.Width;
       by1 = ball_y;
       by2 = ball_y + ball.Height;
+
 
       if (bx1 + ball_sx < side_lx)
         ball_sx = ball_shift_x;
@@ -89,25 +116,51 @@ namespace Arkanoid
           loss_ball();
       }
       
-      ball_x += ball_sx;
-      ball_y += ball_sy;
-      ball.Location = new Point(ball_x, ball_y);
+ 
+     ball_x += ball_sx;
+     ball_y += ball_sy;
+     ball.Location = new Point(ball_x, ball_y);
+     
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (cross_brick(array[i]))
+        {
+          array[i].Visible = false;
+          score_count++;
+          score.Text = String.Format("SCORE: {0}", score_count);
+        }
+        
+      }
 
-      cross_brick(brick1);
-      cross_brick(brick2);
-      cross_brick(brick3);
-      cross_brick(brick4);
-      cross_brick(brick5);
-
-      /*
-      foreach (Label brick in this.Controls.OfType<Label>())
-          cross_brick(brick);
-      */
     }
 
-    private void cross_brick(Label brick)
+    private void FormGame_MouseMove(object sender, MouseEventArgs e)
     {
-      if (!brick.Visible) return;
+      if (launch_mouse_game)
+      {
+        int x = e.X;
+        int y = e.Y;
+        int deltaX = pX - x;
+        int deltaY = pY - y;
+        if (deltaX > 0)
+        {
+          //значит по X идет движение влево 
+          shift_racket(-racket_shift_x);
+        }
+        else if (deltaX < 0)
+        {
+          //значит по X идет движение вправо 
+          shift_racket(+racket_shift_x);
+        }
+        pX = x;
+        pY = y;
+      }
+      
+    }
+
+    private bool cross_brick(Label brick)
+    {
+      if (!brick.Visible) return false;
       int bx1, bx2, bx0,
           by1, by2, by0;
       int rx1, rx2,
@@ -129,7 +182,7 @@ namespace Arkanoid
       {
         drop_brick(brick);
         ball_sy = -ball_sy;
-        return;
+        return true;
       }
 
       if (rx1 <= bx0 && bx0 <= rx2 &&
@@ -137,7 +190,7 @@ namespace Arkanoid
       {
         drop_brick(brick);
         ball_sy = -ball_sy;
-        return;
+        return true;
       }
 
       if (rx1 <= bx2 && bx2 <= rx2 &&
@@ -145,7 +198,7 @@ namespace Arkanoid
       {
         drop_brick(brick);
         ball_sx = -ball_sx;
-        return;
+        return true;
       }
 
       if (rx1 <= bx1 && bx1 <= rx2 &&
@@ -153,8 +206,9 @@ namespace Arkanoid
       {
         drop_brick(brick);
         ball_sx = -ball_sx;
-        return;
+        return true;
       }
+      else return false;
     }
 
     private void drop_brick(Label brick)
@@ -175,20 +229,7 @@ namespace Arkanoid
       DialogResult = System.Windows.Forms.DialogResult.Abort;
     }
 
-    private void init_game()
-    {
-      racket_x = racket.Location.X;
-      racket_y = racket.Location.Y;
-      side_lx = label_left.Location.X + label_left.Width;
-      side_rx = label_right.Location.X;
-      side_uy = label_top.Location.X + label_top.Height;
-      ball_x = ball.Location.X;
-      ball_y = ball.Location.Y;
-      ball_sx = ball_shift_x;
-      ball_sy = -ball_shift_y;
-      total_bricks = 5;
-      
-    }
+ 
 
 
     private void FormGame_KeyDown(object sender, KeyEventArgs e)
@@ -196,12 +237,12 @@ namespace Arkanoid
       Keys key = e.KeyCode;
       switch (key)
       {
-        case Keys.Left:
-          shift_racket(-racket_shift_x); break;
-        case Keys.Right: shift_racket(+racket_shift_x); break;
-        case Keys.A: shift_racket(-racket_shift_x); break;
-        case Keys.D: shift_racket(+racket_shift_x); break;
-        case Keys.Space: timer.Enabled = true; break;
+        //case Keys.Left: shift_racket(-racket_shift_x); break;
+        //case Keys.Right: shift_racket(+racket_shift_x); break;
+        //case Keys.A: shift_racket(-racket_shift_x); break;
+        //case Keys.D: shift_racket(+racket_shift_x); break;
+        case Keys.Space: timer.Enabled = true; launch_mouse_game = true; label_pause.Visible = false; break;
+        case Keys.Escape: timer.Enabled = false; label_pause.Visible = true; launch_mouse_game = false; break;
       }
     }
 

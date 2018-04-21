@@ -96,6 +96,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ball_icon.ico" />
+    <None Include="Resources\life.png" />
+    <None Include="Resources\blue_brick.png" />
     <None Include="Resources\black-ball.png" />
     <None Include="Resources\ball_white.png" />
   </ItemGroup>

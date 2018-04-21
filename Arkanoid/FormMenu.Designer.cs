@@ -35,7 +35,7 @@
       // ButtonStart
       // 
       this.ButtonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-      this.ButtonStart.Location = new System.Drawing.Point(215, 395);
+      this.ButtonStart.Location = new System.Drawing.Point(304, 386);
       this.ButtonStart.Name = "ButtonStart";
       this.ButtonStart.Size = new System.Drawing.Size(303, 38);
       this.ButtonStart.TabIndex = 0;
@@ -49,7 +49,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackgroundImage = global::Arkanoid.Properties.Resources.image_start;
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.ClientSize = new System.Drawing.Size(706, 461);
+      this.ClientSize = new System.Drawing.Size(861, 436);
       this.Controls.Add(this.ButtonStart);
       this.DoubleBuffered = true;
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

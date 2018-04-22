@@ -12,9 +12,10 @@ using System.IO;
 
 namespace Arkanoid
 {
-
+  
   public partial class FormGame : Form
   {
+    public int next_level = 1;
     bool launch_mouse_game = true;
     bool launch_keyboard_game = false;
 
@@ -40,15 +41,18 @@ namespace Arkanoid
 
     int N, M;
     int[,] Level;
-    int next_level = 1;
+
+    //int next_level = 1;
+
     int count_lifes = 0;
     bool loss = false;
     bool pause = false;
     bool moveL, moveR;
-    List<Label> array2 = new List<Label>();
+    List<Label> array_bricks = new List<Label>();
    
     private void init_game()
     {
+      level.Text = String.Format("Level: {0}", next_level);
       racket_x = racket.Location.X;
       racket_y = racket.Location.Y;
       side_lx = label_left.Location.X + label_left.Width;
@@ -67,7 +71,7 @@ namespace Arkanoid
 
     private void load_level(int number)
     {
-      array2.Clear();
+      array_bricks.Clear();
       StreamReader sr = new StreamReader(Convert.ToString(number) + ".txt");
       string Str;
       Str = sr.ReadLine();
@@ -98,41 +102,52 @@ namespace Arkanoid
             else
               brick.BackColor = Color.Blue;
            
-            if (next_level == 3)
+            if (next_level == 3 || next_level == 4)
             {
-              ball_shift_x = 6;
-              ball_shift_y = 4;
+              ball_shift_x = 5;
+              ball_shift_y = 3;
               brick.Height = 22;
               brick.Width = 35;
+            }
+            else if (next_level == 2)
+            {
+              brick.Height = 22;
+              brick.Width = 35;
+              brick.BackColor = Color.Green;
+            }
+            else if (next_level == 5)
+            {
+              brick.Height = 22;
+              brick.Width = 40;
             }
             else
             {
               brick.Height = 22;
-              brick.Width = 72;
+              brick.Width = 70;
             }
             
             this.Controls.Add(brick);
-            array2.Add(brick);
+            array_bricks.Add(brick);
           }
         }
 
       }
       sr.Close();
-      if (next_level == 3)
+      if (next_level == 5)
       {
-        array2[22].Enabled = false;
-        array2[22].BackColor = Color.Red;
-        array2[29].Enabled = false;
-        array2[29].BackColor = Color.Red;
+        array_bricks[22].Enabled = false;
+        array_bricks[22].BackColor = Color.Red;
+        array_bricks[29].Enabled = false;
+        array_bricks[29].BackColor = Color.Red;
       }
       else
       {
         int rand_life = rand.Next(1, N);
-        array2[rand_life].Enabled = false;
-        array2[rand_life].BackColor = Color.Red;
+        array_bricks[rand_life].Enabled = false;
+        array_bricks[rand_life].BackColor = Color.Red;
       }
       
-      total_bricks = array2.Count;
+      total_bricks = array_bricks.Count;
     }
 
     public FormGame()
@@ -143,6 +158,7 @@ namespace Arkanoid
 
     private void FormGame_Shown(object sender, EventArgs e)
     {
+
       init_game();
     }
 
@@ -206,14 +222,14 @@ namespace Arkanoid
      ball_y += ball_sy;
      ball.Location = new Point(ball_x, ball_y);
      
-      for (int i = 0; i < array2.Count; i++)
+      for (int i = 0; i < array_bricks.Count; i++)
       {
-        if (cross_brick(array2[i]))
+        if (cross_brick(array_bricks[i]))
         {
-          array2[i].BackColor = Color.Green;
-          if (array2[i].Visible == false)
+          array_bricks[i].BackColor = Color.Green;
+          if (array_bricks[i].Visible == false)
             score_count++;
-          score.Text = String.Format("SCORE: {0}", score_count);
+          score.Text = String.Format("SCORE:  {0}", score_count);
         }
         
       }
@@ -339,6 +355,27 @@ namespace Arkanoid
       
     }
 
+    private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      timer.Enabled = false;
+      score_count = 0;
+      life1.Visible = true;
+      life2.Visible = true;
+      life3.Visible = true;
+      launch_mouse_game = true;
+      control_mouse.Enabled = true;
+      control_keyboard.Enabled = true;
+      score.Text = String.Format("SCORE:  {0}", score_count);
+      default_position();
+      count_lifes = 0;
+      for (int i = 0; i < array_bricks.Count; i++)
+      {
+        this.Controls.Remove(array_bricks[i]);
+
+      }
+      array_bricks.Clear();
+    }
+
     private bool cross_brick(Label brick)
     {
       if (!brick.Visible) return false;
@@ -402,32 +439,49 @@ namespace Arkanoid
       if (brick.Enabled == false)
       {
         extra_life.Visible = true;
-        if (life4.Visible == true)
+        if (life2.Visible == true)
+        {
+            if (life3.Visible == true)
           {
-            if (life5.Visible == true)
+            if (life4.Visible == true)
             {
-              if (life6.Visible == true)
-                count_lifes -= 1;
+              if (life5.Visible == true)
+              {
+                if (life6.Visible == false)
+                {
+                  life6.Visible = true;
+                  count_lifes -= 1;
+                }
+
+              }
               else
               {
-                life6.Visible = true;
+                life5.Visible = true;
                 count_lifes -= 1;
               }
+
             }
             else
             {
-              life5.Visible = true;
+              life4.Visible = true;
               count_lifes -= 1;
             }
-        
           }
+          else
+          {
+            life3.Visible = true;
+            count_lifes -= 1;
+          }
+        }
         else
         {
-          life4.Visible = true;
+          life2.Visible = true;
           count_lifes -= 1;
         }
+        
       }
       total_bricks--;
+      
       if (total_bricks == 0)
       {
         timer.Enabled = false;
@@ -438,9 +492,9 @@ namespace Arkanoid
         label_win_loss.Text = "You win!";
         label_win_loss.ForeColor = Color.Green;
         label_win_loss.Visible = true;
-        if (next_level == 3)
+        if (next_level == 5)
         { 
-          MessageBox.Show("You win!", String.Format("YOU SCORE: {0}", next_level));
+          MessageBox.Show(String.Format("YOU SCORE: {0}", score_count), "You win!");
           DialogResult = System.Windows.Forms.DialogResult.OK;
           this.Close();
         }
@@ -448,7 +502,10 @@ namespace Arkanoid
         {
           extra_life.Visible = false;
           next_level += 1;
-          ball.Location = new System.Drawing.Point(372, 427);
+          default_position();
+          label_win_loss.Text = "You win!";
+          label_win_loss.ForeColor = Color.Green;
+          label_win_loss.Visible = true;
           MessageBox.Show("Сongratulation! Next level", "Next level");
           label_win_loss.Visible = false;
           load_level(next_level);
@@ -473,9 +530,7 @@ namespace Arkanoid
         DialogResult = System.Windows.Forms.DialogResult.Abort;
       }
       
-    
-     // ball.Location = new System.Drawing.Point(372, 427);
-     // label4.Text = Convert.ToString(lives);
+
 
 
     }
@@ -485,21 +540,6 @@ namespace Arkanoid
 
     private void FormGame_KeyDown(object sender, KeyEventArgs e)
     {
-      /* 
-       Keys key = e.KeyCode;
-
-       if (launch_keyboard_game)
-       {
-         racket_shift_x = 20;
-         switch (key)
-         {
-           case Keys.Left: shift_racket(-racket_shift_x); break;
-           case Keys.Right: shift_racket(+racket_shift_x); break;
-           case Keys.A: shift_racket(-racket_shift_x); break;
-           case Keys.D: shift_racket(+racket_shift_x); break;
-         }
-       }
-       */
       Keys key = e.KeyCode;
       if (launch_keyboard_game)
       {
@@ -525,29 +565,21 @@ namespace Arkanoid
       racket.Location = new Point(racket_x, racket_y);
       if (timer.Enabled == false)
       {
-        ball_x = racket_x + racket.Width / 2;
+        ball_x = racket_x + racket.Width / 3;
         ball.Location = new System.Drawing.Point(ball_x, ball_y);
       }
     
-
-      /*
-        if (timer.Enabled == false && ball_x == 377)
-      {
-        ball_x = racket_x + racket.Width / 2;
-        ball.Location = new Point(ball_x, ball_y);
-      }
-       */
 
     }
 
     public void loss_lifes()
     {
+      timer.Enabled = false;
       count_lifes += 1;
       loss = false;
-      ball.Location = new System.Drawing.Point(372, 427);
-      timer.Enabled = false;
-      ball_x = 372;
-      ball_y = 427;
+      default_position();
+
+
     }
 
     public void loss_lifes_count()
@@ -592,6 +624,18 @@ namespace Arkanoid
 
 
       }
+    }
+
+    public void default_position()
+    {
+      ball_x = 347;
+      ball_y = 524;
+      ball.Location = new Point(ball_x, ball_y);
+      ball.Location = new System.Drawing.Point(ball_x, ball_y);
+      racket_x = 298;
+      racket_y = 550;
+      racket.Location = new System.Drawing.Point(racket_x, racket_y);
+      racket.Location = new Point(racket_x, racket_y);
     }
   }
 }

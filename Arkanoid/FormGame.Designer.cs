@@ -72,22 +72,22 @@
       this.brick31 = new System.Windows.Forms.Label();
       this.brick32 = new System.Windows.Forms.Label();
       this.level = new System.Windows.Forms.Label();
-      this.life1 = new System.Windows.Forms.PictureBox();
-      this.ball = new System.Windows.Forms.PictureBox();
-      this.life2 = new System.Windows.Forms.PictureBox();
-      this.life3 = new System.Windows.Forms.PictureBox();
-      this.life4 = new System.Windows.Forms.PictureBox();
-      this.life5 = new System.Windows.Forms.PictureBox();
-      this.life6 = new System.Windows.Forms.PictureBox();
       this.extra_life = new System.Windows.Forms.Label();
       this.timer_racket = new System.Windows.Forms.Timer(this.components);
+      this.life6 = new System.Windows.Forms.PictureBox();
+      this.life5 = new System.Windows.Forms.PictureBox();
+      this.life4 = new System.Windows.Forms.PictureBox();
+      this.life3 = new System.Windows.Forms.PictureBox();
+      this.life2 = new System.Windows.Forms.PictureBox();
+      this.life1 = new System.Windows.Forms.PictureBox();
+      this.ball = new System.Windows.Forms.PictureBox();
+      ((System.ComponentModel.ISupportInitialize)(this.life6)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life5)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life4)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life4)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life5)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life6)).BeginInit();
       this.SuspendLayout();
       // 
       // label_top
@@ -95,7 +95,7 @@
       this.label_top.BackColor = System.Drawing.Color.Navy;
       this.label_top.Location = new System.Drawing.Point(-1, 0);
       this.label_top.Name = "label_top";
-      this.label_top.Size = new System.Drawing.Size(753, 15);
+      this.label_top.Size = new System.Drawing.Size(753, 18);
       this.label_top.TabIndex = 0;
       // 
       // label_left
@@ -103,15 +103,15 @@
       this.label_left.BackColor = System.Drawing.Color.Navy;
       this.label_left.Location = new System.Drawing.Point(-1, 0);
       this.label_left.Name = "label_left";
-      this.label_left.Size = new System.Drawing.Size(15, 473);
+      this.label_left.Size = new System.Drawing.Size(20, 570);
       this.label_left.TabIndex = 1;
       // 
       // label_right
       // 
       this.label_right.BackColor = System.Drawing.Color.Navy;
-      this.label_right.Location = new System.Drawing.Point(737, 0);
+      this.label_right.Location = new System.Drawing.Point(734, 0);
       this.label_right.Name = "label_right";
-      this.label_right.Size = new System.Drawing.Size(15, 473);
+      this.label_right.Size = new System.Drawing.Size(20, 570);
       this.label_right.TabIndex = 2;
       // 
       // brick2
@@ -152,6 +152,7 @@
       // score
       // 
       this.score.AutoSize = true;
+      this.score.BackColor = System.Drawing.Color.Transparent;
       this.score.Font = new System.Drawing.Font("Algerian", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.score.ForeColor = System.Drawing.Color.Green;
       this.score.Location = new System.Drawing.Point(787, 34);
@@ -293,6 +294,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
+      this.label1.BackColor = System.Drawing.Color.Transparent;
       this.label1.Font = new System.Drawing.Font("Algerian", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label1.Location = new System.Drawing.Point(790, 69);
       this.label1.Name = "label1";
@@ -303,6 +305,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
+      this.label2.BackColor = System.Drawing.Color.Transparent;
       this.label2.Font = new System.Drawing.Font("Algerian", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label2.Location = new System.Drawing.Point(774, 95);
       this.label2.Name = "label2";
@@ -313,6 +316,7 @@
       // label3
       // 
       this.label3.AutoSize = true;
+      this.label3.BackColor = System.Drawing.Color.Transparent;
       this.label3.Font = new System.Drawing.Font("Algerian", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label3.Location = new System.Drawing.Point(774, 125);
       this.label3.Name = "label3";
@@ -323,9 +327,10 @@
       // label_pause
       // 
       this.label_pause.AutoSize = true;
+      this.label_pause.BackColor = System.Drawing.Color.Transparent;
       this.label_pause.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label_pause.ForeColor = System.Drawing.Color.Red;
-      this.label_pause.Location = new System.Drawing.Point(803, 388);
+      this.label_pause.Location = new System.Drawing.Point(807, 482);
       this.label_pause.Name = "label_pause";
       this.label_pause.Size = new System.Drawing.Size(134, 41);
       this.label_pause.TabIndex = 32;
@@ -337,7 +342,8 @@
       this.racket.BackColor = System.Drawing.Color.Black;
       this.racket.Enabled = false;
       this.racket.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-      this.racket.Location = new System.Drawing.Point(320, 453);
+      this.racket.ForeColor = System.Drawing.Color.Black;
+      this.racket.Location = new System.Drawing.Point(298, 550);
       this.racket.Name = "racket";
       this.racket.Size = new System.Drawing.Size(120, 20);
       this.racket.TabIndex = 3;
@@ -347,11 +353,12 @@
       // label_win_loss
       // 
       this.label_win_loss.AutoSize = true;
-      this.label_win_loss.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label_win_loss.BackColor = System.Drawing.Color.Transparent;
+      this.label_win_loss.Font = new System.Drawing.Font("Algerian", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.label_win_loss.ForeColor = System.Drawing.Color.Green;
-      this.label_win_loss.Location = new System.Drawing.Point(758, 227);
+      this.label_win_loss.Location = new System.Drawing.Point(760, 288);
       this.label_win_loss.Name = "label_win_loss";
-      this.label_win_loss.Size = new System.Drawing.Size(80, 41);
+      this.label_win_loss.Size = new System.Drawing.Size(105, 54);
       this.label_win_loss.TabIndex = 34;
       this.label_win_loss.Text = "Win";
       this.label_win_loss.Visible = false;
@@ -359,25 +366,27 @@
       // control_mouse
       // 
       this.control_mouse.AutoSize = true;
+      this.control_mouse.BackColor = System.Drawing.Color.Transparent;
       this.control_mouse.Font = new System.Drawing.Font("Algerian", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.control_mouse.Location = new System.Drawing.Point(779, 154);
       this.control_mouse.Name = "control_mouse";
       this.control_mouse.Size = new System.Drawing.Size(116, 34);
       this.control_mouse.TabIndex = 35;
       this.control_mouse.Text = "MOUSE";
-      this.control_mouse.UseVisualStyleBackColor = true;
+      this.control_mouse.UseVisualStyleBackColor = false;
       this.control_mouse.CheckedChanged += new System.EventHandler(this.control_mouse_CheckedChanged);
       // 
       // control_keyboard
       // 
       this.control_keyboard.AutoSize = true;
+      this.control_keyboard.BackColor = System.Drawing.Color.Transparent;
       this.control_keyboard.Font = new System.Drawing.Font("Algerian", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.control_keyboard.Location = new System.Drawing.Point(779, 190);
       this.control_keyboard.Name = "control_keyboard";
       this.control_keyboard.Size = new System.Drawing.Size(170, 34);
       this.control_keyboard.TabIndex = 36;
       this.control_keyboard.Text = "keyboard";
-      this.control_keyboard.UseVisualStyleBackColor = true;
+      this.control_keyboard.UseVisualStyleBackColor = false;
       this.control_keyboard.CheckedChanged += new System.EventHandler(this.control_keyboard_CheckedChanged);
       // 
       // brick1
@@ -503,6 +512,7 @@
       // level
       // 
       this.level.AutoSize = true;
+      this.level.BackColor = System.Drawing.Color.Transparent;
       this.level.Font = new System.Drawing.Font("Algerian", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.level.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
       this.level.Location = new System.Drawing.Point(788, 0);
@@ -511,79 +521,13 @@
       this.level.TabIndex = 48;
       this.level.Text = "Level:  1";
       // 
-      // life1
-      // 
-      this.life1.Image = global::Arkanoid.Properties.Resources.life;
-      this.life1.Location = new System.Drawing.Point(758, 442);
-      this.life1.Name = "life1";
-      this.life1.Size = new System.Drawing.Size(31, 31);
-      this.life1.TabIndex = 49;
-      this.life1.TabStop = false;
-      // 
-      // ball
-      // 
-      this.ball.Image = global::Arkanoid.Properties.Resources.black_ball;
-      this.ball.Location = new System.Drawing.Point(372, 427);
-      this.ball.Name = "ball";
-      this.ball.Size = new System.Drawing.Size(20, 20);
-      this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.ball.TabIndex = 33;
-      this.ball.TabStop = false;
-      // 
-      // life2
-      // 
-      this.life2.Image = global::Arkanoid.Properties.Resources.life;
-      this.life2.Location = new System.Drawing.Point(795, 442);
-      this.life2.Name = "life2";
-      this.life2.Size = new System.Drawing.Size(31, 31);
-      this.life2.TabIndex = 50;
-      this.life2.TabStop = false;
-      // 
-      // life3
-      // 
-      this.life3.Image = global::Arkanoid.Properties.Resources.life;
-      this.life3.Location = new System.Drawing.Point(832, 442);
-      this.life3.Name = "life3";
-      this.life3.Size = new System.Drawing.Size(31, 31);
-      this.life3.TabIndex = 51;
-      this.life3.TabStop = false;
-      // 
-      // life4
-      // 
-      this.life4.Image = global::Arkanoid.Properties.Resources.life;
-      this.life4.Location = new System.Drawing.Point(869, 442);
-      this.life4.Name = "life4";
-      this.life4.Size = new System.Drawing.Size(31, 31);
-      this.life4.TabIndex = 52;
-      this.life4.TabStop = false;
-      this.life4.Visible = false;
-      // 
-      // life5
-      // 
-      this.life5.Image = global::Arkanoid.Properties.Resources.life;
-      this.life5.Location = new System.Drawing.Point(906, 442);
-      this.life5.Name = "life5";
-      this.life5.Size = new System.Drawing.Size(31, 31);
-      this.life5.TabIndex = 53;
-      this.life5.TabStop = false;
-      this.life5.Visible = false;
-      // 
-      // life6
-      // 
-      this.life6.Image = global::Arkanoid.Properties.Resources.life;
-      this.life6.Location = new System.Drawing.Point(943, 442);
-      this.life6.Name = "life6";
-      this.life6.Size = new System.Drawing.Size(31, 31);
-      this.life6.TabIndex = 54;
-      this.life6.TabStop = false;
-      this.life6.Visible = false;
-      // 
       // extra_life
       // 
       this.extra_life.AutoSize = true;
+      this.extra_life.BackColor = System.Drawing.Color.Transparent;
       this.extra_life.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.extra_life.ForeColor = System.Drawing.Color.Red;
-      this.extra_life.Location = new System.Drawing.Point(758, 277);
+      this.extra_life.Location = new System.Drawing.Point(755, 227);
       this.extra_life.Name = "extra_life";
       this.extra_life.Size = new System.Drawing.Size(235, 41);
       this.extra_life.TabIndex = 55;
@@ -595,12 +539,86 @@
       this.timer_racket.Interval = 1;
       this.timer_racket.Tick += new System.EventHandler(this.timer_racket_Tick);
       // 
+      // life6
+      // 
+      this.life6.BackColor = System.Drawing.Color.Transparent;
+      this.life6.Image = ((System.Drawing.Image)(resources.GetObject("life6.Image")));
+      this.life6.Location = new System.Drawing.Point(947, 536);
+      this.life6.Name = "life6";
+      this.life6.Size = new System.Drawing.Size(31, 31);
+      this.life6.TabIndex = 54;
+      this.life6.TabStop = false;
+      this.life6.Visible = false;
+      // 
+      // life5
+      // 
+      this.life5.BackColor = System.Drawing.Color.Transparent;
+      this.life5.Image = ((System.Drawing.Image)(resources.GetObject("life5.Image")));
+      this.life5.Location = new System.Drawing.Point(910, 536);
+      this.life5.Name = "life5";
+      this.life5.Size = new System.Drawing.Size(31, 31);
+      this.life5.TabIndex = 53;
+      this.life5.TabStop = false;
+      this.life5.Visible = false;
+      // 
+      // life4
+      // 
+      this.life4.BackColor = System.Drawing.Color.Transparent;
+      this.life4.Image = ((System.Drawing.Image)(resources.GetObject("life4.Image")));
+      this.life4.Location = new System.Drawing.Point(873, 536);
+      this.life4.Name = "life4";
+      this.life4.Size = new System.Drawing.Size(31, 31);
+      this.life4.TabIndex = 52;
+      this.life4.TabStop = false;
+      this.life4.Visible = false;
+      // 
+      // life3
+      // 
+      this.life3.BackColor = System.Drawing.Color.Transparent;
+      this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
+      this.life3.Location = new System.Drawing.Point(836, 536);
+      this.life3.Name = "life3";
+      this.life3.Size = new System.Drawing.Size(31, 31);
+      this.life3.TabIndex = 51;
+      this.life3.TabStop = false;
+      // 
+      // life2
+      // 
+      this.life2.BackColor = System.Drawing.Color.Transparent;
+      this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
+      this.life2.Location = new System.Drawing.Point(799, 536);
+      this.life2.Name = "life2";
+      this.life2.Size = new System.Drawing.Size(31, 31);
+      this.life2.TabIndex = 50;
+      this.life2.TabStop = false;
+      // 
+      // life1
+      // 
+      this.life1.BackColor = System.Drawing.Color.Transparent;
+      this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
+      this.life1.Location = new System.Drawing.Point(762, 536);
+      this.life1.Name = "life1";
+      this.life1.Size = new System.Drawing.Size(31, 31);
+      this.life1.TabIndex = 49;
+      this.life1.TabStop = false;
+      // 
+      // ball
+      // 
+      this.ball.BackColor = System.Drawing.Color.Transparent;
+      this.ball.Image = ((System.Drawing.Image)(resources.GetObject("ball.Image")));
+      this.ball.Location = new System.Drawing.Point(347, 524);
+      this.ball.Name = "ball";
+      this.ball.Size = new System.Drawing.Size(20, 20);
+      this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.ball.TabIndex = 33;
+      this.ball.TabStop = false;
+      // 
       // FormGame
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.Azure;
-      this.ClientSize = new System.Drawing.Size(988, 475);
+      this.ClientSize = new System.Drawing.Size(997, 569);
       this.Controls.Add(this.extra_life);
       this.Controls.Add(this.life6);
       this.Controls.Add(this.life5);
@@ -650,22 +668,23 @@
       this.Controls.Add(this.label_right);
       this.Controls.Add(this.label_left);
       this.Controls.Add(this.label_top);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "FormGame";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "FormGame";
+      this.Text = "Arkanoid";
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGame_FormClosed);
       this.Shown += new System.EventHandler(this.FormGame_Shown);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormGame_KeyDown);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormGame_KeyUp);
       this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormGame_MouseMove);
+      ((System.ComponentModel.ISupportInitialize)(this.life6)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life5)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life4)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.life1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life4)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life5)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.life6)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

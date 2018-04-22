@@ -63,6 +63,16 @@ namespace Arkanoid.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ball_white {
             get {
                 object obj = ResourceManager.GetObject("ball_white", resourceCulture);
@@ -76,6 +86,16 @@ namespace Arkanoid.Properties {
         internal static System.Drawing.Bitmap black_ball {
             get {
                 object obj = ResourceManager.GetObject("black-ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap black_ball1 {
+            get {
+                object obj = ResourceManager.GetObject("black-ball1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace Arkanoid.Properties {
         internal static System.Drawing.Bitmap life {
             get {
                 object obj = ResourceManager.GetObject("life", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap life1 {
+            get {
+                object obj = ResourceManager.GetObject("life1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
